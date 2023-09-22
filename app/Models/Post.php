@@ -26,6 +26,6 @@ class Post extends Model
 
     // Relacion uno a uno polimorfica
     public function image(){
-        return $this->morphOne(Image::class,'iamgeable');
+        return $this->morphOne(Image::class,'imageable');
     }
 }
