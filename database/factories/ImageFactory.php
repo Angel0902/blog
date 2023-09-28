@@ -17,7 +17,9 @@ class ImageFactory extends Factory
     public function definition(): array
     {
         return [
-            'url' => 'posts/' . $this->faker->image('public/storage/posts',640,480,false)
+            'url' => $this->faker->image('storage/app/public/posts',640,480,false)
         ];
     }
 }
+//C:\wamp64\www\blog\storage\app\public\posts
+// 'url' => 'posts/' . $this->faker->image('public/storage/posts',640,480,false)
