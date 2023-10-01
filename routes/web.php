@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +24,10 @@ Route::get('posts/{post}',[PostController::class,'show'])->name('posts.show');
 Route::get('category/{category}',[PostController::class,'category'])->name('posts.category');
 
 Route::get('tag/{tag}',[PostController::class,'tag'])->name('posts.tag');
+
+Route::get('/admin',[HomeController::class,'index'])->name('admin.home');
+Route::resource('categories',CategoryController::class)->names('admin.categories');// Es de admin
+Route::resource('tags',TagController::class)->names('admin.tags');// Es de admin
 
 Route::middleware([
     'auth:sanctum',
